@@ -9,7 +9,7 @@ DEPENDANCIES
 You will need to have previously installed tor services, if not use: 'sudo apt-get install tor'
 You will also need to have installed proxychains, if not use: 'sudo apt-get install proxychains'
 
-*** Dont forget to configure both tor & proxychains configuration files when first installed ***
+*** Dont forget to configure both tor & proxychains configuration files when first installing them ***
 -------------------------------
 
 DESCRIPTION
