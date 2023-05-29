@@ -3,6 +3,10 @@
 # Proxygo - by TheJuicePapi
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+![Screenshot_2023-05-29_15-23-14](https://github.com/TheJuicePapi/proxygo/assets/134894632/c973f808-5405-466e-b4cb-b00c983e0d48)
+
+![Screenshot_2023-05-29_15-23-31](https://github.com/TheJuicePapi/proxygo/assets/134894632/43d29973-9406-4abe-8962-9f29edfbaafa)
+
 
 DEPENDANCIES
 
