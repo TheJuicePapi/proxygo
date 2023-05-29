@@ -1,6 +1,18 @@
              ### This py script is my first project and will be used to automate tor services and then launching proxychains right after. ### 
 
-print("Hello Juice Papi")
+art = """
+
+ ____                       ____
+|  _ \ _ __ _____  ___   _ / ___| ____
+| |_) | '__/ _ \ \/ / | | | |  _ / _  }
+|  __/| | | (_) >  <| |_| | |_| | (_) |
+|_|   |_|  \___/_/\_\__,  |\____|\____}
+                     |___/
+"""
+
+print(art)
+
+
 
 import time 
 
