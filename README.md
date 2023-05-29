@@ -14,4 +14,16 @@ You will also need to have installed proxychains 'sudo apt-get install proxychai
 
 *** Dont forget to configure both tor & proxychains beforehand ***
 
-This script has been tested on a RPI 4b 8gb model running a kali linux arm. 
+.
+.
+.
+.
+.
+.
+
+Simply download the script and place it in your /home/usr directory folder.
+Then to launch  open the terimal and use 'python3 proxygo.py'
+
+
+
+This script has been tested on a RPI 4b model running a kali linux arm. 
