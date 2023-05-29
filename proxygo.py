@@ -1,4 +1,3 @@
-             ### This py script is my first project and will be used to automate tor services and then launching proxychains right after. ### 
 
 art = """
 
