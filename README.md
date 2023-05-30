@@ -28,7 +28,7 @@ INSTALLATION & USAGE
 
 Simply download the file and place it directly in your /home/usr directory folder.
 
-Then to launch simply open a terimal and use 'python3 proxygo.py'
+Then to launch just open up a terimal and use 'python3 proxygo.py'
 
 You should then be automatically directed to www.dnsleaktest.com in order to test 
 if the proxychains are working correctly. 
