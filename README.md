@@ -18,15 +18,15 @@ You will also need to have installed proxychains, if not use: 'sudo apt-get inst
 
 DESCRIPTION
 
-This is an automated python script to start tor services and then proxychains right after that will launch directly into a seperate firefox browser window.
+This is an automated python script to start tor services and then proxychains right after which will launch directly into a seperate firefox browser window.
 
-Then after you are finished and you close the firefox browser window, The proxychains and then the tor services will be automatically disabled upon exiting the script.
+Then after you are finished and you close the firefox browser window, The proxychains and the tor services will be automatically disabled upon exiting the script.
 
 -------------------------------
  
 INSTALLATION & USAGE
 
-Simply download the script file and place it in your /home/usr directory folder.
+Simply download the file and place it directly in your /home/usr directory folder.
 
 Then to launch simply open a terimal and use 'python3 proxygo.py'
 
