@@ -65,7 +65,19 @@ subprocess.run(["sudo","systemctl","stop","tor"])
 import time 
 
 time.sleep(1) # Wait for 1 seconds
-print("Firefox has exited and tor services have been disabled...")
+print("   *** Firefox session has ENDED and Tor services have been DISABLED ***")
+
+
+art = """
+
+ _____ _              _          __                   _           _
+|_   _| |_  __ _ _ _ | |__ ___  / _|___ _ _   _  _ __(_)_ _  __ _| |
+  | | | ' \/ _` | ' \| / /(_-< |  _/ _ \ '_| | || (_-< | ' \/ _` |_|
+  |_| |_||_\__,_|_||_|_\_\/__/ |_| \___/_|    \_,_/__/_|_||_\__, (_)
+                                                            |___/
+"""
+
+print(art)
 
 
 
