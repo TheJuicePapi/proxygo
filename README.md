@@ -32,7 +32,7 @@ You can download using either git clone or by chosing the zip folder option.
 
 For git clone installation:
 
-1. 'sudo git clone https://github.com/TheJuicePapi/proxygo.git'
+1. 'git clone https://github.com/TheJuicePapi/proxygo.git'
 2. 'cd proxygo'
 3. 'python3 proxygo.py'
 
@@ -43,8 +43,6 @@ Then once in the directory run the script using 'python3 proxygo.py'
 
 Once run you should then be automatically directed to www.dnsleaktest.com in order to test 
 if the proxychains are working correctly. 
-
-To remove files use: 'sudo rm -r /yourfolderpath/proxygo'
 
 -------------------------------
 
