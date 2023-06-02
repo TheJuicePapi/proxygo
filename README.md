@@ -44,6 +44,8 @@ Then once in the directory run the script using 'python3 proxygo.py'
 Once run you should then be automatically directed to www.dnsleaktest.com in order to test 
 if the proxychains are working correctly. 
 
+To remove files use: 'sudo rm -r /yourfolderpath/proxygo'
+
 -------------------------------
 
 This is my very first ever script / upload and has been tested on an RPI 4b running a kali linux arm. 
