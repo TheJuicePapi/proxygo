@@ -28,11 +28,20 @@ Then after you are finished and you close the firefox browser window, The proxyc
  
 INSTALLATION & USAGE
 
-Simply download the file and place it directly in your /home/usr directory folder.
+You can download using either git clone or by chosing the zip folder option.
 
-Then to launch just open up a terimal and use 'python3 proxygo.py'
+For git clone installation:
 
-You should then be automatically directed to www.dnsleaktest.com in order to test 
+1. 'sudo git clone https://github.com/TheJuicePapi/proxygo.git'
+2. 'cd proxygo'
+3. 'python3 proxygo.py'
+
+For manual zip / raw file installation:
+
+Simply download the file then copy and paste or move the python script into the desired location.
+Then once in the directory run the script using 'python3 proxygo.py'
+
+Once run you should then be automatically directed to www.dnsleaktest.com in order to test 
 if the proxychains are working correctly. 
 
 -------------------------------
