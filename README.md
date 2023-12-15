@@ -22,28 +22,43 @@ The install.sh will also make a shortcut so you can launch it from anywhere.
  
 INSTALLATION & USAGE
 
-You can download using either git clone or by chosing the zip folder option.
-
 For git clone installation:
 
 1. 'git clone https://github.com/TheJuicePapi/proxygo.git'
 2. 'cd proxygo'
 3. 'chmod +x install.sh'
 4. 'sudo ./install.sh'
-5. 'proxygo'
+5. 'proxygo' (before using this command make sure to set up proxychains & tor files. See bellow for details)
 
-
-Once run you should then be automatically directed to www.dnsleaktest.com in order to test 
+Once it's all set up and run you should then be automatically directed to www.dnsleaktest.com in order to test 
 if the proxychains are working correctly. 
 
 -------------------------------
 
 DEPENDANCIES
 
-You will need to have previously installed tor services, if not use: 'sudo apt-get install tor'
-You will also need to have installed proxychains, if not use: 'sudo apt-get install proxychains'
+For this script to work you will need to have tor & proxychains installed. The install.sh should automatically install them for you.
+If not then use 'sudo apt install tor && sudo apt install proxychains -y'
 
-*** Dont forget to configure both tor & proxychains configuration files after first installing them. Steps to do so will be bellow ***
+-------------------------------
+CONFIGURATION
+
+Now to configure the files...
+To set up proxychains use 'sudo nano /etc/proxychains4.conf'
+where it shows "#dynamic_chain" make sure to take the "#" away and then add a "#" to where it says "strict_chain".
+By adding a "#" infront of "strict_chain" and taking it away from "dynamic_chain" it will force proxychains to use the dynamic proxy option instead.
+
+Also scroll down and make sure "proxy_dns" is active, if not then activate it by taking away the "#" infront.
+
+ Lastly scroll all the way to the bottom where you see "socks4  127.0.0.1 9050". Right under this line write in "socks5  127.0.0.1 9050" so it now looks like:
+socks4  127.0.0.1 9050
+socks5  127.0.0.1 9050
+
+now we are finished setting up proxychains. There are many more things we can do here but for not let's just use this. 
+To save press CTRL + X then Y and press then enter.
+
+Now to set up tor... 
+
 -------------------------------
 
 
