@@ -24,7 +24,7 @@ INSTALLATION & USAGE
 
 Git clone installation:
 
-1. 'git clone https://github.com/TheJuicePapi/proxygo.git'
+1. 'sudo git clone https://github.com/TheJuicePapi/proxygo.git'
 2. 'cd proxygo'
 3. 'chmod +x install.sh'
 4. 'sudo ./install.sh'
