@@ -8,7 +8,7 @@ fi
 
 # Install required packages (adjust based on your needs)
 apt-get update
-apt-get install tor && apt-get install proxychains -y
+apt-get install tor -y && apt-get install proxychains -y
 
 # Install Python dependencies
 # No dependencies needed
