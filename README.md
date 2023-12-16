@@ -28,7 +28,10 @@ Git clone installation:
 2. 'cd proxygo'
 3. 'sudo chmod +x install.sh proxygo.py'
 4. 'sudo ./install.sh'
-5. 'sudo proxygo' (before using this command make sure to set up proxychains & tor files. See bellow for details)
+ 
+   (before the next step see CONFIGURATION for details)
+   
+5. Exit and open a new terminal to use 'proxygo' shortcut 
 
 -------------------------------
 
