@@ -19,7 +19,7 @@ ln -s "$(pwd)/proxygo.py" /usr/local/bin/proxygo
 # Clear terminal window
 clear
 
-echo "Installation complete and shortcut created! You can now run proxygo.py from any directory by simply typing 'proxygo'."
+echo "Installation complete and shortcut created! Launch a new terminal and you'll be able to run 'proxygo' from any directory!"
 
 echo "                                                                                       "
 
