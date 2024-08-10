@@ -17,7 +17,7 @@ art = colored("""
            *   *      *    *      *          *       *     *
                 *  ____        *     *    *   ____ *   *      *
             *     |  _ \ _ __ _____  ___   _ / ___| ____    *
-         *     *  | |_) | '__/ _ \ \/ / | | | |  _ / _  }      *
+               *  | |_) | '__/ _ \ \/ / | | | |  _ / _  }      *
            *      |  __/| | | (_) >  <| |_| | |_| | (_) |   *
              *    |_|   |_|  \___/_/\_\__,  |\____|\____} *    *
           *     *           *          |___/
@@ -33,19 +33,19 @@ try:
     time.sleep(1.5)  # Wait for 1.5 seconds
 
     # Print header with color
-    header = colored("                 +=====================================+", 'yellow', attrs=['bold'])
-    cprint(header)
-    cprint("                [||                                   ||]", 'yellow')
-    cprint("         +===[||[||  Starting TOR services for you... ||]||]===+", 'yellow', attrs=['bold'])
-    cprint("                [||                                   ||]", 'yellow')
-    cprint("                 +=====================================+", 'yellow', attrs=['bold'])
+    header = colored("                  +=====================================+", 'yellow', attrs=['bold'])
+    cprint(header) 
+    cprint("                 [||                                   ||]", 'yellow')
+    cprint("          +===[||[||  Starting TOR services for you... ||]||]===+", 'yellow', attrs=['bold'])
+    cprint("                 [||                                   ||]", 'yellow')
+    cprint("                  +=====================================+", 'yellow', attrs=['bold'])
 
     # Start TOR services
     subprocess.run(["sudo", "systemctl", "start", "tor"])
 
     time.sleep(1.5)  # Wait for 1.5 seconds
     print("                                           ")
-    cprint("                               [  DONE! ]", 'green', attrs=['bold'])
+    cprint("                                [  DONE! ]", 'green', attrs=['bold'])
     print("                                           ")
 
     time.sleep(2)  # Wait for 2 seconds
