@@ -3,8 +3,11 @@
 # Proxygo - by TheJuicePapi
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-![Screenshot_2023-06-01_19-32-16](https://github.com/TheJuicePapi/proxygo/assets/134894632/1e2e13fb-d436-4acf-bfd6-073829fba306)
-![Screenshot_2023-06-01_19-32-54](https://github.com/TheJuicePapi/proxygo/assets/134894632/5598197e-7b0d-4c9f-9378-aac9bb3e5289)
+
+![Screenshot_2024-08-09_21-12-32-2](https://github.com/user-attachments/assets/69215139-1d54-4d35-b580-bbe15f801fe7)
+![Screenshot_2024-08-09_21-13-18-2](https://github.com/user-attachments/assets/7d7f8732-9245-4f2d-8ce2-1605e03031c7)
+![Screenshot_2024-08-09_21-12-22-3](https://github.com/user-attachments/assets/bdc0e887-b3c8-42a4-a86b-613c1488e37e)
+![Screenshot_2024-08-09_21-13-31-3](https://github.com/user-attachments/assets/57e25748-9d02-400f-bf7c-ec5138bc36b7)
 
 
 
