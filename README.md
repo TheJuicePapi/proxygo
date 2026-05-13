@@ -1,8 +1,8 @@
--------------------------------------------------------------------------------------------------------------------------------------------
 
-# Proxygo - by TheJuicePapi
+<img width="1536" height="1024" alt="proxygo Image May 13, 2026, 02_03_24 PM" src="https://github.com/user-attachments/assets/6aad3096-8c46-46e8-9ed9-0e0f3ebdb8e0" />
 
--------------------------------------------------------------------------------------------------------------------------------------------
+
+# 
 
 ![Screenshot_2024-08-09_21-12-32-2](https://github.com/user-attachments/assets/69215139-1d54-4d35-b580-bbe15f801fe7)
 ![Screenshot_2024-08-09_21-13-18-2](https://github.com/user-attachments/assets/7d7f8732-9245-4f2d-8ce2-1605e03031c7)
