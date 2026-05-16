@@ -1,26 +1,43 @@
 #!/bin/bash
+set -euo pipefail
 
 # Check if running as root
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run as root"
-    exit
+if [ "${EUID}" -ne 0 ]; then
+    echo "Please run as root: sudo ./install.sh"
+    exit 1
 fi
 
-# Install required packages (adjust based on your needs)
+if ! command -v apt-get >/dev/null 2>&1; then
+    echo "This installer currently supports apt-based Linux distributions."
+    echo "Install tor, proxychains4, and python3 manually, then symlink proxygo.py."
+    exit 1
+fi
+
 apt-get update
-apt-get install tor -y && apt-get install proxychains -y
+apt-get install -y tor proxychains4 python3
 
-# Install Python dependencies
-# No dependencies needed
+install -m 0755 "$(pwd)/proxygo.py" /usr/local/bin/proxygo
 
-# Create symbolic link for proxygo.py
-ln -s "$(pwd)/proxygo.py" /usr/local/bin/proxygo
+# Create the default user config for the invoking sudo user when possible.
+TARGET_USER="${SUDO_USER:-}"
+if [ -n "${TARGET_USER}" ] && [ "${TARGET_USER}" != "root" ]; then
+    sudo -u "${TARGET_USER}" /usr/local/bin/proxygo init-config >/dev/null
+else
+    /usr/local/bin/proxygo init-config >/dev/null
+fi
 
-# Clear terminal window
-clear
+clear 2>/dev/null || true
+cat <<'MSG'
+ProxyGo installation complete!
 
-echo "Installation complete and shortcut created! Launch a new terminal and you'll be able to run 'proxygo' from any directory!"
+Launch the advanced menu with:
+  proxygo
 
-echo "                                                                                       "
+Useful commands:
+  proxygo status
+  proxygo run
+  proxygo generate-config
 
-echo "Please note that you may still need to manually edit the proxychains and torrc file in order to use proxychains. Please follow the setup instructions provided in 'README.md'"
+ProxyGo now keeps its own configuration under ~/.config/proxygo/ and launches
+proxychains with the generated config file for better control.
+MSG
