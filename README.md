@@ -1,74 +1,184 @@
-
 <img width="1536" height="1024" alt="proxygo Image May 13, 2026, 02_03_24 PM" src="https://github.com/user-attachments/assets/6aad3096-8c46-46e8-9ed9-0e0f3ebdb8e0" />
 
+# ProxyGo
 
-# 
+ProxyGo is an advanced, menu-driven Tor/proxychains controller for Linux. It can start Tor, generate a dedicated proxychains configuration, launch a browser through the selected proxy chain, and clean up when the session ends.
 
-![Screenshot_2024-08-09_21-12-32-2](https://github.com/user-attachments/assets/69215139-1d54-4d35-b580-bbe15f801fe7)
-![Screenshot_2024-08-09_21-13-18-2](https://github.com/user-attachments/assets/7d7f8732-9245-4f2d-8ce2-1605e03031c7)
-![Screenshot_2024-08-09_21-12-22-3](https://github.com/user-attachments/assets/bdc0e887-b3c8-42a4-a86b-613c1488e37e)
-![Screenshot_2024-08-09_21-13-31-3](https://github.com/user-attachments/assets/57e25748-9d02-400f-bf7c-ec5138bc36b7)
+The original one-button launcher has been reworked into a configurable tool with a dashboard, visual menu system, stable-session warnings, generated proxychains configs, and command-line controls.
+
+<img width="821" height="671" alt="Proxygo1-1" src="https://github.com/user-attachments/assets/bf9b6d9c-0c60-470c-86df-89836ae0ef82" />
+<img width="828" height="676" alt="Proxygo2-1" src="https://github.com/user-attachments/assets/4d095272-772e-4c9c-925e-72d2df4deb6e" />
+<img width="826" height="672" alt="Proxygo3-1" src="https://github.com/user-attachments/assets/f90c0220-d631-435f-88c4-6a7055c376d0" />
+<img width="841" height="675" alt="Proxygo4" src="https://github.com/user-attachments/assets/9983dde3-f6a2-4406-aa7f-6415f58f9c8e" />
 
 
+## Features
 
+- Full interactive terminal menu with centered, polished visual panels.
+- Status dashboard for Tor, proxychains, browser, generated config, and proxy list.
+- Dedicated ProxyGo config at `~/.config/proxygo/config.ini`.
+- Generated proxychains config at `~/.config/proxygo/proxychains.conf`.
+- Launches proxychains with `-f` so ProxyGo always uses the config it generated.
+- Configurable browser command and start/test URL.
+- Configurable proxychains binary, chain mode, DNS proxying, and timeouts.
+- Proxy list manager for SOCKS/HTTP proxy entries.
+- Stable-session mode warnings for chain modes, multiple proxies, and Tor circuit behavior.
+- CLI commands for scripting and power users.
+- No third-party Python packages required.
 
+## Important note about stability
 
-DESCRIPTION
+ProxyGo can make proxychains more predictable by using `strict_chain` and a generated config file, but Tor can still rotate circuits or exits behind `127.0.0.1:9050`. If endpoint consistency is required for a legitimate account/session workflow, use a single fixed proxy instead of expecting Tor to keep the same exit forever.
 
-This is an automated python script to start tor services and then proxychains right after which will launch directly into a seperate firefox browser window.
+## Installation
 
-Then after you are finished useing the program and you close the firefox browser window, The proxychains and tor services will be automatically disabled upon exiting the script.
+```bash
+git clone https://github.com/TheJuicePapi/proxygo.git
+cd proxygo
+sudo chmod +x install.sh proxygo.py
+sudo ./install.sh
+```
 
-* The install.sh will also make a shortcut so you can launch it from anywhere. 
+The installer installs `tor`, `proxychains4`, and `python3`, copies ProxyGo to `/usr/local/bin/proxygo`, and creates the default config for your user.
 
--------------------------------
- 
-INSTALLATION & USAGE
+Manual dependency installation:
 
-Git clone installation:
+```bash
+sudo apt-get update
+sudo apt-get install -y tor proxychains4 python3
+```
 
-1. 'git clone https://github.com/TheJuicePapi/proxygo.git'
-2. 'cd proxygo'
-3. 'sudo chmod +x install.sh proxygo.py'
-4. 'sudo ./install.sh'
- 
-   (before the next step see CONFIGURATION for details)
-   
-5. Exit and open a new terminal to use 'proxygo' shortcut 
+## Usage
 
--------------------------------
+Open the advanced menu:
 
-DEPENDANCIES
+```bash
+proxygo
+```
 
-For this script to work you will need to have tor & proxychains installed. The install.sh should automatically install them for you.
-If not then use 'sudo apt install tor && sudo apt install proxychains -y'
+Run with saved settings:
 
--------------------------------
-CONFIGURATION
+```bash
+proxygo run
+```
 
-To set up proxychains...
-Use 'sudo nano /etc/proxychains4.conf'
-where it shows "#dynamic_chain" make sure to take the "#" away and then add a "#" to where it says "strict_chain".
-By adding a "#" infront of "strict_chain" and taking it away from "dynamic_chain" it will force proxychains to use the dynamic proxy option instead.
+Show the status dashboard:
 
-Also scroll down and make sure "proxy_dns" is active, if not then activate it by taking away the "#" infront.
+```bash
+proxygo status
+```
 
- Lastly scroll all the way to the bottom where you see "socks4  127.0.0.1 9050". Right under this line put "socks5  127.0.0.1 9050" 
- (This is your proxy list so you can also add in more proxy servers if you wish though imo there is not much of a need because dynamic proxychains already come with a list of servers that it will pick from. 
+Create or refresh default config files:
 
-now we are finished setting up proxychains. There are many more things we can do here but for not let's just use this. 
-To save press CTRL + X then Y and press then enter.
+```bash
+proxygo init-config
+```
 
-To set up tor services...
-Use 'sudo su' then once in root 'cd' >>> 'cd /etc/tor' >>> 'nano torrc'
-  Then scroll all the way to the bottom and insert "HTTPTunnelPort 8118"
-  
-  To save press CTRL + X then Y and press then enter.. Dont forget to restart tor after all this with 'sudo service tor restart'
+Generate the proxychains config only:
 
-Once done use 'proxygo' to start you should then be automatically directed to www.dnsleaktest.com in order to test 
-if the proxychains are working correctly. 
+```bash
+proxygo generate-config
+```
 
-  -------------------------------
+Dry-run the launch command:
 
-This is my very first ever script / upload and has been tested on an RPI 4b running a kali linux arm.
-Enjoy and use responsibly
+```bash
+proxygo run --dry-run
+```
+
+Override the browser or URL for one run:
+
+```bash
+proxygo run --browser firefox --url http://www.dnsleaktest.com
+```
+
+Run without managing Tor:
+
+```bash
+proxygo run --no-tor
+```
+
+## Configuration
+
+ProxyGo stores its main settings here:
+
+```text
+~/.config/proxygo/config.ini
+```
+
+Default example:
+
+```ini
+[general]
+browser = firefox
+start_url = http://www.dnsleaktest.com
+use_proxychains = True
+show_tor_status = True
+stable_mode = True
+quiet_mode = False
+
+[tor]
+enabled = True
+service = tor
+manage_service = True
+stop_on_exit = True
+
+[proxychains]
+binary = proxychains4
+config_file = ~/.config/proxygo/proxychains.conf
+chain_mode = strict_chain
+proxy_dns = True
+tcp_read_timeout = 15000
+tcp_connect_timeout = 8000
+
+[proxies]
+1 = socks5 127.0.0.1 9050
+```
+
+ProxyGo generates this file from your settings:
+
+```text
+~/.config/proxygo/proxychains.conf
+```
+
+Generated example:
+
+```text
+strict_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+
+[ProxyList]
+socks5 127.0.0.1 9050
+```
+
+ProxyGo launches sessions with:
+
+```bash
+proxychains4 -f ~/.config/proxygo/proxychains.conf firefox http://www.dnsleaktest.com
+```
+
+That means you no longer need to edit `/etc/proxychains4.conf` for normal ProxyGo use.
+
+## Chain modes
+
+- `strict_chain`: Uses the proxy list in order. Best default for stable sessions.
+- `dynamic_chain`: Skips unavailable proxies. Useful for fallback, but less predictable.
+- `random_chain`: Randomizes proxy selection. Not recommended for session consistency.
+
+## Proxy entries
+
+Proxy entries use proxychains format:
+
+```text
+socks5 127.0.0.1 9050
+http 192.168.1.50 8080
+socks5 proxy.example.com 1080 username password
+```
+
+You can add or remove proxy entries from the interactive menu.
+
+## Responsible use
+
+ProxyGo is intended for privacy testing, lab work, routing control, and learning how Tor/proxychains behave. Use it responsibly and follow the rules of any network or service you access.
