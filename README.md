@@ -33,7 +33,7 @@ ProxyGo can make proxychains more predictable by using `strict_chain` and a gene
 ## Installation
 
 ```bash
-git clone https://github.com/TheJuicePapi/proxygo.git
+git clone https://github.com/WastelandSYS/proxygo.git
 cd proxygo
 sudo chmod +x install.sh proxygo.py
 sudo ./install.sh
