@@ -1,6 +1,6 @@
 <img width="1536" height="1024" alt="proxygo Image May 13, 2026, 02_03_24 PM" src="https://github.com/user-attachments/assets/6aad3096-8c46-46e8-9ed9-0e0f3ebdb8e0" />
 
-# ProxyGo
+## ProxyGo
 
 ProxyGo is an advanced, menu-driven Tor/proxychains controller for Linux. It can start Tor, generate a dedicated proxychains configuration, launch a browser through the selected proxy chain, and clean up when the session ends.
 
